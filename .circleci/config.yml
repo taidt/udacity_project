@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@5.1.0
+
 jobs:
   print_hello: 
     docker: 
@@ -25,9 +28,6 @@ workflows:
   hello-workflow:
     jobs:
       - print_hello
-      #     filters:
-      #       branches:
-      #         only: main
-      # - print_world: 
-      #     requires:
-      #       - print_hello
+      - print_world: 
+          requires:
+            - print_hello
