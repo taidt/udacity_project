@@ -24,10 +24,10 @@ jobs:
 workflows:
   hello-workflow:
     jobs:
-      - print_hello:
-          filters:
-            branches:
-              only: main
-      - print_world: 
-          requires:
-            - print_hello
+      - print_hello
+      #     filters:
+      #       branches:
+      #         only: main
+      # - print_world: 
+      #     requires:
+      #       - print_hello
