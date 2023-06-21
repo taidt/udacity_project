@@ -1,20 +1,6 @@
-
 version: 2.1
 
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Start job:"
-          command: "start logs:"
-
   print_hello: 
     docker: 
       - image: circleci/node:13.8.0
@@ -38,7 +24,6 @@ jobs:
 workflows:
   hello-workflow:
     jobs:
-      - say-hello
       - print_hello:
           filters:
             branches:
