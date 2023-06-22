@@ -22,17 +22,6 @@ jobs:
           name: "print_world"
           command: "echo world!"
 
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/configuration-reference/#workflows
-# workflows:
-#   hello-workflow:
-#     jobs:
-#       - say-hello
-
-orbs:
-
-   welcome: Circleci/welcome-orb@0.4.1
-
 workflows:
   hello-workflow:
     jobs:
